@@ -1369,7 +1369,6 @@ var user = {
     },
 
     start_events : function() {
-        this.event_source_reg = new EventSource("https://" + this.node + "/api/client/v2/registrations/alias" + "/events?token=" + this.token);
         this.event_source = new EventSource("https://" + this.node + "/api/client/v2/conferences/" + this.conference + "/events?token=" + this.token);
         this.event_source.addEventListener("disconnect", user.disconnect.bind(this), false);
         this.event_source.addEventListener("conference_update", user.conference_update.bind(this), false);
